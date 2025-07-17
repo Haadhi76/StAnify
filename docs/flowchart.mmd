@@ -1,0 +1,8 @@
+flowchart TD
+  A[Concept Input] --> B[ConceptToNarrativeAgent]
+  B --> C[SceneGeneratorAgent]
+  C --> D[PromptRefinerAgent]
+  D --> E[ImageGeneratorAgent (Stable Diffusion)]
+  C --> F[DialogueAgent]
+  E & F --> G[SlideCompiler/UIController]
+  G --> H[Streamlit UI]

@@ -1,0 +1,8 @@
+crewai
+streamlit
+openai
+diffusers
+transformers
+accelerate
+pillow
+python-dotenv

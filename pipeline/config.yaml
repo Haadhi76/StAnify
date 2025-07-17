@@ -1,0 +1,42 @@
+agents:
+  - name: ConceptToNarrativeAgent
+    tools: [openai]
+    inputs: [concept]
+    outputs: [outline]
+    type: task
+
+  - name: SceneGeneratorAgent
+    tools: [openai]
+    inputs: [outline]
+    outputs: [scene_prompts]
+    type: task
+
+  - name: PromptRefinerAgent
+    tools: [openai]
+    inputs: [scene_prompts]
+    outputs: [refined_prompts]
+    type: task
+
+  - name: ImageGeneratorAgent
+    tools: [stable_diffusion]
+    inputs: [refined_prompts]
+    outputs: [images]
+    type: task
+
+  - name: DialogueAgent
+    tools: [openai]
+    inputs: [beats, characters]
+    outputs: [dialogue]
+    type: task
+
+  - name: TTSAgent
+    tools: [elevenlabs]
+    inputs: [dialogue]
+    outputs: [audio_files]
+    type: task
+
+  - name: SlideCompiler
+    tools: [streamlit]
+    inputs: [images, dialogue, audio_files]
+    outputs: [ui_render]
+    type: task

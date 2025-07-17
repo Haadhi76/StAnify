@@ -18,7 +18,7 @@ A multi-agent visual storytelling system for teaching children generalized conce
 1. **Clone & enter the project**
 
    ```bash
-   git clone <https://github.com/yourusername/stanify.git>
+   git clone <https://github.com/yourusername/StAnify.git>
    cd stanify_project
    ```
 
